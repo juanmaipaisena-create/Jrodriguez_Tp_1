@@ -221,7 +221,7 @@ _data = {
 [sub_resource type="QuadMesh" id="QuadMesh_0hol4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
-size = Vector2(84.75, 6)
+size = Vector2(135.53125, 6)
 
 [node name="Node2D" type="Node2D" unique_id=2094676199]
 
@@ -245,32 +245,32 @@ libraries/ = SubResource("AnimationLibrary_epypp")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=594617335]
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1068219317]
-position = Vector2(-4, 14)
-scale = Vector2(84, 6.5)
+position = Vector2(-46, 14)
+scale = Vector2(136, 6.5)
 mesh = SubResource("QuadMesh_0hol4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=462529704]
-position = Vector2(-3, 14)
+position = Vector2(-46.234375, 14)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1926984454]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D2" unique_id=205081441]
-position = Vector2(57.99999, -13.999999)
-scale = Vector2(84.00001, 6.5)
+[node name="MeshInstance2D1" type="MeshInstance2D" parent="StaticBody2D2" unique_id=205081441]
+position = Vector2(33.000004, -15)
+scale = Vector2(132.00002, 6.5)
 mesh = SubResource("QuadMesh_0hol4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=370341057]
-position = Vector2(59, -14)
+[node name="CollisionShape2D1" type="CollisionShape2D" parent="StaticBody2D2" unique_id=370341057]
+position = Vector2(34, -15)
 shape = SubResource("RectangleShape2D_q6r6c")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=1106487197]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D3" unique_id=1811135703]
-position = Vector2(-67.999985, -33.999996)
-scale = Vector2(84.00001, 6.5)
+[node name="MeshInstance2D2" type="MeshInstance2D" parent="StaticBody2D3" unique_id=1811135703]
+position = Vector2(-41, -50.000004)
+scale = Vector2(135.99998, 6.5)
 mesh = SubResource("QuadMesh_0hol4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=284324744]
-position = Vector2(-68, -34)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3" unique_id=284324744]
+position = Vector2(-41, -50)
 shape = SubResource("RectangleShape2D_q6r6c")
