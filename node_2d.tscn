@@ -229,6 +229,11 @@ _data = {
 &"jump": SubResource("Animation_0hol4")
 }
 
+[sub_resource type="QuadMesh" id="QuadMesh_0hol4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(91, 6)
+
 [node name="Node2D" type="Node2D" unique_id=2094676199]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=394506172]
@@ -238,6 +243,7 @@ texture = ExtResource("1_wtcfe")
 hframes = 8
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1466776513]
+zoom = Vector2(5, 5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1040133827]
 position = Vector2(-0.5, 2.5)
@@ -245,3 +251,14 @@ shape = SubResource("RectangleShape2D_y32ns")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=674193691]
 libraries/ = SubResource("AnimationLibrary_epypp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=594617335]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D" unique_id=1068219317]
+position = Vector2(6.499998, 15)
+scale = Vector2(91, 6.5)
+mesh = SubResource("QuadMesh_0hol4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=462529704]
+position = Vector2(6.5, 15)
+shape = SubResource("RectangleShape2D_q6r6c")
