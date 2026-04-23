@@ -20,7 +20,7 @@ func _state_default_start():
 func _state_start() -> void:
 	##configuramos estado
 	current_state.controlled_node = controled_node
-	current_state.StateMachine = self
+	#current_state.StateMachine = self
 	current_state.start()
 
 #metodo para cambiar el estado

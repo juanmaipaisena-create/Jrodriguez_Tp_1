@@ -5,11 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dtyjtsgncjnaj" path="res://sprites/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="2_0e48y"]
 [ext_resource type="Texture2D" uid="uid://bwewooi6rdndu" path="res://sprites/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://dota7l1ls1mq7" path="res://sprites/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="3_epypp"]
-[ext_resource type="PackedScene" uid="uid://bqixvwtr1ceky" path="res://avanzado/state_machine.tscn" id="6_kdubu"]
-[ext_resource type="Script" uid="uid://bpjkm2bgmrvcr" path="res://Scripts/Player states/player_state_idle.gd" id="7_ir8iy"]
-[ext_resource type="Script" uid="uid://bpfsm5jhemfih" path="res://Scripts/Player states/player_state_run.gd" id="8_hqns4"]
-[ext_resource type="Script" uid="uid://c2c7oy7k2hu6d" path="res://Scripts/Player states/player_state_jump.gd" id="9_x0ka3"]
-[ext_resource type="Script" uid="uid://b8npn0dwajeeh" path="res://Scripts/Player states/player_state_fall.gd" id="10_0h7mo"]
+[ext_resource type="Script" uid="uid://d08clvw8of2rm" path="res://enemigo.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://8wgb8oa26eoj" path="res://icon.svg" id="6_kdubu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y32ns"]
 size = Vector2(12, 17)
@@ -228,23 +225,26 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
 size = Vector2(135.53125, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(5.25, 6.5)
+
 [node name="Node2D" type="Node2D" unique_id=2094676199]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=394506172]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=394506172]
 script = ExtResource("1_q6r6c")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1228760788]
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1228760788]
 texture = ExtResource("1_wtcfe")
 hframes = 8
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1466776513]
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1466776513]
 zoom = Vector2(5, 5)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1040133827]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1040133827]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_y32ns")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D" unique_id=674193691]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=674193691]
 libraries/ = SubResource("AnimationLibrary_epypp")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=594617335]
@@ -280,16 +280,15 @@ mesh = SubResource("QuadMesh_0hol4")
 position = Vector2(-41, -50)
 shape = SubResource("RectangleShape2D_q6r6c")
 
-[node name="StateMachine" parent="." unique_id=2077043634 instance=ExtResource("6_kdubu")]
+[node name="Enemigo" type="CharacterBody2D" parent="." unique_id=1098341159]
+script = ExtResource("6_d21ai")
 
-[node name="PlayerIdle" type="Node" parent="StateMachine" unique_id=1658603225]
-script = ExtResource("7_ir8iy")
+[node name="Sprite2D" type="Sprite2D" parent="Enemigo" unique_id=685552112]
+modulate = Color(0.4929006, 0.00021422998, 0.50746864, 1)
+position = Vector2(-92.5, -34.25)
+scale = Vector2(0.039062552, 0.050781272)
+texture = ExtResource("6_kdubu")
 
-[node name="PlayerRun" type="Node" parent="StateMachine" unique_id=1197772217]
-script = ExtResource("8_hqns4")
-
-[node name="PlayerJump" type="Node" parent="StateMachine" unique_id=1726009388]
-script = ExtResource("9_x0ka3")
-
-[node name="PlayerFall" type="Node" parent="StateMachine" unique_id=1942832580]
-script = ExtResource("10_0h7mo")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemigo" unique_id=2121328066]
+position = Vector2(-92.625, -34.25)
+shape = SubResource("RectangleShape2D_kdubu")
